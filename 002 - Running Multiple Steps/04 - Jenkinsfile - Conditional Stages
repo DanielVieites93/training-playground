@@ -12,13 +12,17 @@ pipeline {
 		when {
 			environment name: 'CHOICES', value: 'build'
 		}
+		steps{
 		echo "ola mundo!"
+		}
 	}
 	stage('test') {
 		when {
 			environment name: 'CHOISES', value: 'test'
 		}
-		echo "ola test!"
+		steps{
+			echo "ola test!"
+		 }
 	}
     }
 }
