@@ -4,6 +4,10 @@ pipeline {
 			image 'alpine:latest' 
 		}
 	}
+	parameters {
+		string ( name: 'name', defaultvalue: '', description:'')
+		string ( age: 'name', defaultvalue: '0', description:'')
+	}
     stages {
         stage('build') {
             steps {
