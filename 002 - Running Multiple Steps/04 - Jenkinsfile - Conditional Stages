@@ -18,7 +18,7 @@ pipeline {
 	}
 	stage('test') {
 		when {
-			environment name: 'CHOISES', value: 'test'
+			environment name: 'CHOICES', value: 'test'
 		}
 		steps{
 			echo "ola test!"
