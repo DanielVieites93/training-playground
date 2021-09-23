@@ -12,16 +12,18 @@ pipeline {
 					script: 'ls -ltr',
 					returnStdout: true
 				).trim()
-				env.FILE = readFile("006 - Cleaning Up and Notifications/maintenance.txt")
 			}
             }
         }
     }
     post{
-    	always{
-		emailext body: "${FILE}",
+    	sendEMAIL()
+    }
+}
+
+sendEMAIL(){
+	def file = readFile("maintenance.txt")
+	emailext body: file,
 		subject: 'Test Subject',
 		to: 'nb25292@novabase.pt'
-	}
-    }
 }
