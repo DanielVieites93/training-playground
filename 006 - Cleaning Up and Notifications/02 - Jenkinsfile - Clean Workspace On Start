@@ -8,7 +8,7 @@ pipeline {
     	stage('prepare'){
 		steps{
 			sh "ls -ltr"
-			cleanWS()
+			cleanWs()
 		}
 	}
         stage('build') {
