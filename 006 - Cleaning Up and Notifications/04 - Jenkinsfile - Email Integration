@@ -7,8 +7,15 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh ""
+                sh "ls -ltr"
             }
         }
+    }
+    post{
+    	always{
+		emailext body: 'Test Message',
+		subject: 'Test Subject',
+		to: 'nb25292@novabase.com'
+	}
     }
 }
