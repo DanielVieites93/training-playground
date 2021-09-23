@@ -5,9 +5,17 @@ pipeline {
 		}
 	}
     stages {
+    	stage('prepare'){
+		steps{
+			sh "ls -ltr"
+			cleanWs()
+		}
+	}
         stage('build') {
             steps {
-                sh ""
+                sh "ls -ltr"
+		sh "date > date.txt"
+		sh "ls -ltr"
             }
         }
     }
