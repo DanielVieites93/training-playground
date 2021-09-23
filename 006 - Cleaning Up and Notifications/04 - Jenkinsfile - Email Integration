@@ -7,13 +7,18 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh "ls -ltr"
+		    script {
+				GIT_COMMIT_EMAIL = sh (
+					script: 'ls -ltr',
+					returnStdout: true
+				).trim()
+			}
             }
         }
     }
     post{
     	always{
-		emailext body: 'Test Message',
+		emailext body: "Test Message  ${GIT_COMMIT_EMAIL}",
 		subject: 'Test Subject',
 		to: 'nb25292@novabase.pt'
 	}
