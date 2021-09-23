@@ -26,7 +26,7 @@ pipeline {
 def sendEMAIL(){
 	def file = readFile("maintenance.html")
 	def newFile = file.replace("REPLACE_PLACE_HOLDER","TESTE")
-	emailext body: file,
+	emailext body: newFile,
 		subject: 'Test Subject',
 		to: 'nb25292@novabase.pt'
 }
