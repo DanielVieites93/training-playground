@@ -15,7 +15,7 @@ pipeline {
     	always{
 		emailext body: 'Test Message',
 		subject: 'Test Subject',
-		to: 'nb25292@novabase.com'
+		to: 'nb25292@novabase.pt'
 	}
     }
 }
