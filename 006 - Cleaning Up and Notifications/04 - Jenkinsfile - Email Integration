@@ -25,7 +25,7 @@ pipeline {
 
 def sendEMAIL(){
 	def file = readFile("maintenance.html")
-	def newFile = file.replace("REPLACE_PLACE_HOLDER","TESTE")
+	def newFile = file.replace("REPLACE_PLACE_HOLDER",${GIT_COMMIT_EMAIL})
 	emailext body: newFile,
 		subject: 'Test Subject',
 		to: 'nb25292@novabase.pt'
