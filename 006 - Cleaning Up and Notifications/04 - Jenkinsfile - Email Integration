@@ -23,7 +23,7 @@ pipeline {
     }
 }
 
-sendEMAIL(){
+def sendEMAIL(){
 	def file = readFile("maintenance.txt")
 	emailext body: file,
 		subject: 'Test Subject',
